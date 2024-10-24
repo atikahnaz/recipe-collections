@@ -11,7 +11,10 @@ const props = defineProps({
 });
 </script>
 <template>
-  <button @click="() => store.saveRecipeToLocalStorage(props.recipe)">
+  <button
+    @click="() => store.saveRecipeToLocalStorage(props.recipe)"
+    class="bg-black text-white px-3 py-1 rounded-lg mr-2"
+  >
     Save
   </button>
 </template>
