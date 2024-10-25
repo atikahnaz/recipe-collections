@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import Image from "primevue/image";
 import DeleteRecipe from "./DeleteRecipe.vue";
 import SaveButton from "./SaveButton.vue";
 import "primeicons/primeicons.css";
