@@ -18,6 +18,7 @@ const imagedefault: string =
   "https://primefaces.org/cdn/primevue/images/usercard.png";
 
 const currentImage = (image: string | string[] | undefined): string => {
+  console.log(image);
   if (!image) return imagedefault; // Return default if no image is provided
   if (Array.isArray(image) && image.length > 0) {
     return image[0]; // Use the first image if it's an array
@@ -26,8 +27,14 @@ const currentImage = (image: string | string[] | undefined): string => {
 };
 
 const imageErrorDisplay = (event: Event): void => {
-  const target = event.target as HTMLImageElement;
-  target.src = imagedefault; // Set the image source to default if the image is broken
+  console.log("image error");
+  if (!event || !(event.target instanceof HTMLImageElement)) {
+    return; // Exit if the event is undefined or target is not an image element
+  }
+  const target = event.target;
+  if (target.src !== imagedefault) {
+    target.src = imagedefault;
+  }
 };
 
 const emit = defineEmits(["close"]);
@@ -37,7 +44,7 @@ const emit = defineEmits(["close"]);
   <div class="bg-white z-40 fixed top-0 w-full h-full overflow-y-scroll left-0">
     <div class="p-5 md:w-1/2 m-auto md:border md:my-4">
       <div class="flex justify-between py-4">
-        <Image
+        <img
           :src="currentImage(props.recipe.image)"
           alt="Image"
           width="250"
