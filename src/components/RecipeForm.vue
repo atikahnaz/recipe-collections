@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useRecipeListStore } from "../stores/recipeStore";
 import Image from "primevue/image";
 import DeleteRecipe from "./DeleteRecipe.vue";
 import SaveButton from "./SaveButton.vue";
@@ -19,8 +18,6 @@ const imagedefault: string =
   "https://primefaces.org/cdn/primevue/images/usercard.png";
 
 const currentImage = (image: string | string[] | undefined): string => {
-  //console.log(image);
-  //console.log(image[0]);
   return image && image.length > 0
     ? image[0]
     : typeof image === "string"
@@ -28,14 +25,12 @@ const currentImage = (image: string | string[] | undefined): string => {
     : imagedefault;
 };
 
-const imageErrorDisplay = (event: Event) => {
+const imageErrorDisplay = (event: Event): void => {
   const target = event.target as HTMLImageElement;
   target.src = imagedefault; // Set the image source to default if the image is broken
 };
 
 const emit = defineEmits(["close"]);
-
-console.log("form");
 </script>
 
 <template>
