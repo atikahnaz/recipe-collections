@@ -10,5 +10,10 @@ const props = defineProps({
 });
 </script>
 <template>
-  <button @click="() => store.deleteRecipe(props.recipe.name)">Delete</button>
+  <button
+    @click="() => store.deleteRecipe(props.recipe.name)"
+    class="bg-black text-white px-3 py-1 rounded-lg mr-2"
+  >
+    Delete
+  </button>
 </template>
