@@ -17,7 +17,6 @@ const imagedefault: string =
   "https://primefaces.org/cdn/primevue/images/usercard.png";
 
 const currentImage = (image: string | string[] | undefined): string => {
-  console.log(image);
   if (!image) return imagedefault; // Return default if no image is provided
   if (Array.isArray(image) && image.length > 0) {
     return image[0]; // Use the first image if it's an array
@@ -26,7 +25,6 @@ const currentImage = (image: string | string[] | undefined): string => {
 };
 
 const imageErrorDisplay = (event: Event): void => {
-  console.log("image error");
   if (!event || !(event.target instanceof HTMLImageElement)) {
     return; // Exit if the event is undefined or target is not an image element
   }
