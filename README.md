@@ -10,3 +10,5 @@
 - Vite
 - Primevue
 - Tailwind CSS
+- PrimeVue
+  
