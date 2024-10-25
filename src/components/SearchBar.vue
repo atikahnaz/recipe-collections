@@ -7,8 +7,8 @@ import InputIcon from "primevue/inputicon";
 const store = useRecipeListStore();
 const searchText = ref<string>("");
 
-const handleSearch = () => {
-  store.searchRecipe(searchText.value); // Make sure to use searchText.value to get the string
+const handleSearch = (): void => {
+  store.searchRecipe(searchText.value);
 };
 </script>
 
