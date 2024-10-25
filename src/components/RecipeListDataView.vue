@@ -27,8 +27,6 @@ const imagedefault: string =
   "https://primefaces.org/cdn/primevue/images/usercard.png";
 
 const currentImage = (image: string | string[] | undefined): string => {
-  //console.log(image);
-  //console.log(image[0]);
   return image && image.length > 0
     ? image[0]
     : typeof image === "string"
@@ -44,19 +42,17 @@ const imageErrorDisplay = (event: Event) => {
 // modal recipe
 const modalVisible = ref<Boolean>(false);
 
-const openModalRecipe = (item: Object) => {
+const openModalRecipe = (item: Object): void => {
   modalVisible.value = true;
   recipeForm.value = item;
-  console.log(item);
 };
 
-const closeModalRecipe = () => {
+const closeModalRecipe = (): void => {
   modalVisible.value = false;
 };
 </script>
 
 <template>
-  <!-- <div>{{ recipeForm.name }}</div> -->
   <RecipeForm
     v-if="modalVisible"
     :recipe="recipeForm"
@@ -66,7 +62,7 @@ const closeModalRecipe = () => {
   <div class="card">
     <p v-if="store.noRecipeMessage" class="py-3">{{ store.noRecipeMessage }}</p>
 
-    <DataView :value="displayedRecipes" paginator :rows="5">
+    <DataView :value="displayedRecipes" paginator :rows="5" dataKey="id">
       <template #list="slotProps">
         <div class="flex flex-col">
           <div
@@ -110,7 +106,6 @@ const closeModalRecipe = () => {
                   </div>
                 </div>
                 <div class="flex flex-col items-end gap-8">
-                  <!-- <p>price</p> -->
                   <SaveButton :recipe="item"></SaveButton>
                 </div>
               </div>
