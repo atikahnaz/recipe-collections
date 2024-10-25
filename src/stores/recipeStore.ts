@@ -5,6 +5,8 @@ export const useRecipeListStore = defineStore("recipeListStore", () => {
   const API_URL: string = `https://raw.githubusercontent.com/micahcochran/json-cookbook/refs/heads/main/cookbook-100.json`;
   const recipeApi = ref<any[]>([]);
   const recipeLocallySaved = ref<any[]>([]);
+  const searchRecipeResult = ref<any[]>([]);
+  const noRecipeMessage = ref<string>();
 
   async function fetchdata(): Promise<void> {
     console.log("fetchdata");
@@ -16,32 +18,64 @@ export const useRecipeListStore = defineStore("recipeListStore", () => {
 
       // retrieve data from local storage
       const dataLocal: any | null = localStorage.getItem("recipeLocallySaved");
-      console.log(dataLocal);
-      console.log(recipeLocallySaved);
+
       recipeLocallySaved.value = dataLocal ? JSON.parse(dataLocal) : [];
-      console.log(recipeLocallySaved.value);
     } catch (error) {
       //console.log(error);
     }
   }
 
   function saveRecipeToLocalStorage(item: object) {
-    console.log("functn save");
-    console.log(item);
-    console.log(recipeLocallySaved.value);
     recipeLocallySaved.value.push(item);
     localStorage.setItem(
       "recipeLocallySaved",
       JSON.stringify(recipeLocallySaved.value)
     );
-    console.log("save recipe");
-    console.log(recipeLocallySaved);
+  }
+
+  function deleteRecipe(name: string) {
+    const updatedRecipe = recipeLocallySaved.value.filter((recipe) => {
+      return recipe.name !== name;
+    });
+
+    recipeLocallySaved.value = updatedRecipe;
+
+    localStorage.setItem("recipeLocallySaved", JSON.stringify(updatedRecipe));
+  }
+
+  function searchRecipe(ingredient: string) {
+    if (!recipeApi.value.length) {
+      console.error("No recipes available to search");
+      return;
+    }
+
+    const resultRecipe = recipeApi.value.filter((recipe) => {
+      if (!Array.isArray(recipe.recipeIngredient)) {
+        return false;
+      }
+      return recipe.recipeIngredient.some((item: string) =>
+        item.toLowerCase().includes(ingredient.toLowerCase())
+      );
+    });
+
+    if (resultRecipe.length === 0) {
+      console.log("No recipes found for the provided ingredient");
+      noRecipeMessage.value = "No recipes found";
+    } else {
+      noRecipeMessage.value = "";
+    }
+
+    searchRecipeResult.value = resultRecipe;
   }
 
   return {
     recipeApi,
     recipeLocallySaved,
+    searchRecipeResult,
+    noRecipeMessage,
     fetchdata,
     saveRecipeToLocalStorage,
+    deleteRecipe,
+    searchRecipe,
   };
 });
