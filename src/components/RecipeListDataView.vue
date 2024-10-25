@@ -51,8 +51,8 @@ const closeModalRecipe = (): void => {
   modalVisible.value = false;
 };
 
-const descriptionCleaned = (description: string) =>
-  description.replace(/&nbsp;/g, " ").replace(/\u2014/g, "—");
+// const descriptionCleaned = (description: string) =>
+//   description.replace(/&nbsp;/g, " ").replace(/\u2014/g, "—");
 </script>
 
 <template>
@@ -104,7 +104,7 @@ const descriptionCleaned = (description: string) =>
                   </div>
                   <div class="bg-surface-100 p-1" style="border-radius: 30px">
                     <p class="line-clamp-3 text-sm overflow-y-scroll">
-                      {{ descriptionCleaned(item.description) }}
+                      {{ item.description }}
                     </p>
                   </div>
                 </div>
