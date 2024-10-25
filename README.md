@@ -1,7 +1,7 @@
 ### Links
 
 - Solution URL: [Github](https://github.com/atikahnaz/recipe-collections)
-- Live Site URL: [Recipe-collections](https://atikahnaz.github.io/rest-countries-api-with-color-theme-switcher-master/)
+- Live Site URL: [Recipe-collections](https://atikahnaz.github.io/recipe-collections/)
 
 ### Built with
 
