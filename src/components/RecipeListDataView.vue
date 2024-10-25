@@ -27,11 +27,11 @@ const imagedefault: string =
   "https://primefaces.org/cdn/primevue/images/usercard.png";
 
 const currentImage = (image: string | string[] | undefined): string => {
-  return image && image.length > 0
-    ? image[0]
-    : typeof image === "string"
-    ? image
-    : imagedefault;
+  if (!image) return imagedefault; // Return default if no image is provided
+  if (Array.isArray(image) && image.length > 0) {
+    return image[0]; // Use the first image if it's an array
+  }
+  return typeof image === "string" ? image : imagedefault; // Return string if it's a valid URL
 };
 
 const imageErrorDisplay = (event: Event) => {
@@ -54,6 +54,8 @@ const closeModalRecipe = (): void => {
 const descriptionCleaned = (description: string) => {
   if (description) {
     return description.replace(/&nbsp;/g, " ").replace(/\u2014/g, "—");
+  } else {
+    return;
   }
 };
 </script>
