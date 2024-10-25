@@ -38,7 +38,9 @@ const emit = defineEmits(["close"]);
 </script>
 
 <template>
-  <div class="bg-white z-40 fixed top-0 w-full h-full overflow-y-scroll left-0">
+  <div
+    class="bg-white dark:bg-gray-800 text-black dark:text-white z-40 fixed top-0 w-full h-full overflow-y-scroll left-0"
+  >
     <div class="p-5 md:w-1/2 m-auto md:border md:my-4">
       <div class="flex justify-between py-4">
         <img
