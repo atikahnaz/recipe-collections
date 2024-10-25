@@ -51,8 +51,11 @@ const closeModalRecipe = (): void => {
   modalVisible.value = false;
 };
 
-// const descriptionCleaned = (description: string) =>
-//   description.replace(/&nbsp;/g, " ").replace(/\u2014/g, "—");
+const descriptionCleaned = (description: string) => {
+  if (description) {
+    return description.replace(/&nbsp;/g, " ").replace(/\u2014/g, "—");
+  }
+};
 </script>
 
 <template>
@@ -104,7 +107,7 @@ const closeModalRecipe = (): void => {
                   </div>
                   <div class="bg-surface-100 p-1" style="border-radius: 30px">
                     <p class="line-clamp-3 text-sm overflow-y-scroll">
-                      {{ item.description }}
+                      {{ descriptionCleaned(item.description) }}
                     </p>
                   </div>
                 </div>
