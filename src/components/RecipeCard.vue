@@ -84,7 +84,7 @@ const responsiveOptions = ref([
         <div
           class="border-surface-200 dark:border-surface-700 rounded my-4 h-80 md:h-96"
         >
-          <div class="mb-4 h-2/3 lg:max-w-72 px-2 lg:mx-auto">
+          <div class="mb-4 h-2/3 md:max-w-72 max-w-40 px-2 mx-auto">
             <div
               class="relative mx-auto h-full"
               @click="openModalRecipe(slotProps.data)"
