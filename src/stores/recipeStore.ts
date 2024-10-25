@@ -9,7 +9,6 @@ export const useRecipeListStore = defineStore("recipeListStore", () => {
   const noRecipeMessage = ref<string>();
 
   async function fetchdata(): Promise<void> {
-    console.log("fetchdata");
     try {
       // retrive data from api
       const response: Response = await fetch(API_URL);
