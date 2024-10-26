@@ -13,15 +13,16 @@ const handleSearch = (): void => {
 </script>
 
 <template>
-  <div class="flex items-center gap-2 my-2">
+  <div class="flex items-center gap-2 md:py-4 my-2 relative">
     <InputText
       placeholder="Search Ingredients"
       type="text"
-      class="w-40 sm:w-auto"
+      class="w-full"
       v-model="searchText"
     />
-    <InputIcon>
+    <i class="pi pi-search mx-2 absolute right-2" @click="handleSearch" />
+    <!-- <InputIcon>
       <i class="pi pi-search mx-2" @click="handleSearch" />
-    </InputIcon>
+    </InputIcon> -->
   </div>
 </template>
