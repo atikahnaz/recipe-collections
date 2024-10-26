@@ -6,6 +6,7 @@ import { onMounted } from "vue";
 import RecipeListDataView from "./components/RecipeListDataView.vue";
 import RecipeCard from "./components/RecipeCard.vue";
 import SearchBar from "./components/SearchBar.vue";
+import HeroImage from "./components/HeroImage.vue";
 
 const store: any = useRecipeListStore();
 
@@ -15,6 +16,11 @@ onMounted(() => {
 </script>
 
 <template>
+  <!-- <div class="relative">
+    <HeroImage class="w-full" />
+    <SearchBar class="absolute flex inset-0 justify-end" />
+  </div> -->
+  <HeroImage />
   <div class="px-6 lg:py-10 lg:px-14">
     <h1 class="text-xl lg:text-2xl font-semibold py-3">My Recipe</h1>
     <div class="mt-2 mb-8">
