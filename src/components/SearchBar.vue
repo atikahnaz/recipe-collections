@@ -2,7 +2,6 @@
 import InputText from "primevue/inputtext";
 import { useRecipeListStore } from "../stores/recipeStore";
 import { ref } from "vue";
-import InputIcon from "primevue/inputicon";
 
 const store = useRecipeListStore();
 const searchText = ref<string>("");
