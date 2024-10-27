@@ -3,7 +3,6 @@
 import { useRecipeListStore } from "./stores/recipeStore";
 import "./style.css";
 import { onMounted } from "vue";
-import RecipeListDataView from "./components/RecipeListDataView.vue";
 import RecipeCard from "./components/RecipeCard.vue";
 import SearchBar from "./components/SearchBar.vue";
 import HeroImage from "./components/HeroImage.vue";
