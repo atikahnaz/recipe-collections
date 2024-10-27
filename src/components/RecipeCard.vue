@@ -72,7 +72,7 @@ const responsiveOptions = ref([
     :isSavedRecipe="true"
     @close="closeModalRecipe"
   ></RecipeForm>
-  <div class="" v-if="props.recipe.length > 0 && props.recipe.length > 2">
+  <div class="" v-if="props.recipe.length > 0">
     <Carousel
       :value="props.recipe"
       :numVisible="5"
@@ -83,11 +83,11 @@ const responsiveOptions = ref([
     >
       <template #item="slotProps">
         <div
-          class="border-surface-200 flex flex-col h-full dark:border-surface-700 rounded"
+          class="border-surface-200flex flex-col h-full dark:border-surface-700 rounded"
         >
           <div class="mb-4 md:max-w-72 max-w-56 max-h-56 px-2 mx-auto">
             <div
-              class="relative mx-auto w-full h-full"
+              class="relative mx-auto w-56 h-56"
               @click="openModalRecipe(slotProps.data)"
               @close="closeModalRecipe"
             >
