@@ -38,7 +38,7 @@ onMounted(() => {
   </div>
   <div
     v-if="store.openSavedPage"
-    class="fixed overflow-auto top-0 px-4 py-6 w-full h-full bg-white"
+    class="fixed overflow-auto top-0 px-4 py-6 w-full h-full bg-white dark:bg-gray-800"
   >
     <SavedRecipePage />
   </div>
