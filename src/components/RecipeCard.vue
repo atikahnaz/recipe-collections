@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import Carousel from "primevue/carousel";
 import { ref } from "vue";
-import DeleteRecipe from "./DeleteRecipe.vue";
+
 import RecipeForm from "./RecipeForm.vue";
 
 const props = defineProps({
@@ -72,21 +72,22 @@ const responsiveOptions = ref([
     :isSavedRecipe="true"
     @close="closeModalRecipe"
   ></RecipeForm>
-  <div class="px-10 border" v-if="props.recipe.length > 0">
+  <div class="" v-if="props.recipe.length > 0 && props.recipe.length > 2">
     <Carousel
       :value="props.recipe"
       :numVisible="5"
       :numScroll="1"
       :responsiveOptions="responsiveOptions"
       class=""
+      :showIndicators="false"
     >
       <template #item="slotProps">
         <div
-          class="border-surface-200 dark:border-surface-700 rounded my-4 h-80 md:h-96"
+          class="border-surface-200 flex flex-col h-full dark:border-surface-700 rounded"
         >
-          <div class="mb-4 h-2/3 md:max-w-72 max-w-40 px-2 mx-auto">
+          <div class="mb-4 md:max-w-72 max-w-56 max-h-56 px-2 mx-auto">
             <div
-              class="relative mx-auto h-full"
+              class="relative mx-auto w-full h-full"
               @click="openModalRecipe(slotProps.data)"
               @close="closeModalRecipe"
             >
@@ -99,11 +100,11 @@ const responsiveOptions = ref([
             </div>
           </div>
 
-          <div class="flex flex-col justify-between items-center h-1/3">
+          <div class="flex flex-col justify-between items-center">
             <div class="font-medium text-xs md:text-base">
               {{ slotProps.data.name }}
             </div>
-            <DeleteRecipe :recipe="slotProps.data" />
+            <!-- <DeleteRecipe :recipe="slotProps.data" /> -->
           </div>
         </div>
       </template>
