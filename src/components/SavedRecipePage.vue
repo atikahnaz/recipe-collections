@@ -11,7 +11,7 @@ const store = useRecipeListStore();
     <button class="my-2 hover:cursor-pointer" @click="store.handleSavedPage">
       Back
     </button>
-    <div class="flex flex-wrap h-full justify-between">
+    <div class="flex flex-wrap h-full gap-2 justify-center">
       <div v-for="recipe in store.recipeLocallySaved" class="flex">
         <CardSingle :recipe="recipe" />
       </div>
