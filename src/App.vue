@@ -9,6 +9,7 @@ import SearchBar from "./components/SearchBar.vue";
 import HeroImage from "./components/HeroImage.vue";
 import NavigationBar from "./components/NavigationBar.vue";
 import SavedRecipePage from "./components/SavedRecipePage.vue";
+import RecipeGridDataView from "./components/RecipeGridDataView.vue";
 
 const store: any = useRecipeListStore();
 
@@ -27,14 +28,20 @@ onMounted(() => {
   </div>
 
   <HeroImage />
-  <div class="px-6 lg:py-10 lg:px-14">
-    <h1 class="text-xl lg:text-2xl font-semibold py-3">My Recipe</h1>
-    <div class="mt-2 mb-8">
-      <RecipeCard :recipe="store.recipeLocallySaved" />
+  <div class="px-6 lg:py-10 lg:px-14 md:flex md:flex-row-reverse">
+    <div class="md:w-1/3">
+      <h1 class="text-xl lg:text-2xl font-semibold py-3 md:pl-10">My Recipe</h1>
+      <div class="mt-2 mb-8">
+        <RecipeCard :recipe="store.recipeLocallySaved" />
+      </div>
     </div>
-    <h1 class="text-xl lg:text-2xl font-semibold py-3">Recipe Collections</h1>
-    <SearchBar />
-    <RecipeListDataView />
+
+    <div class="md:w-2/3 md:mr-4 lg:mr-8">
+      <h1 class="text-xl lg:text-2xl font-semibold py-3">Recipe Collections</h1>
+      <SearchBar />
+      <!-- <RecipeListDataView /> -->
+      <RecipeGridDataView />
+    </div>
   </div>
   <div
     v-if="store.openSavedPage"
