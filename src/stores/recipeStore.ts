@@ -7,6 +7,7 @@ export const useRecipeListStore = defineStore("recipeListStore", () => {
   const recipeLocallySaved = ref<any[]>([]);
   const searchRecipeResult = ref<any[]>([]);
   const noRecipeMessage = ref<string>();
+  const openSavedPage = ref<boolean>(false);
 
   async function fetchdata(): Promise<void> {
     try {
@@ -66,15 +67,18 @@ export const useRecipeListStore = defineStore("recipeListStore", () => {
 
     searchRecipeResult.value = resultRecipe;
   }
+  const handleSavedPage = () => (openSavedPage.value = !openSavedPage.value);
 
   return {
     recipeApi,
     recipeLocallySaved,
     searchRecipeResult,
     noRecipeMessage,
+    openSavedPage,
     fetchdata,
     saveRecipeToLocalStorage,
     deleteRecipe,
     searchRecipe,
+    handleSavedPage,
   };
 });
