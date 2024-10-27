@@ -4,7 +4,7 @@ import SearchBar from "./SearchBar.vue";
 </script>
 <template>
   <div class="relative">
-    <div class="md:h-96 lg:h-[600px]">
+    <div class="md:h-96 lg:h-[500px]">
       <img
         :src="heroImage"
         alt="recipe-search"
@@ -16,7 +16,7 @@ import SearchBar from "./SearchBar.vue";
         class="bg-white bg-opacity-60 flex flex-col w-fit justify-center items-center py-6"
       >
         <h2
-          class="text-lg sm:text-2xl md:text-3xl font-semibold tracking-wide w-2/3 text-gray-800 text-left"
+          class="text-lg sm:text-2xl md:text-3xl lg:text-4xl font-semibold tracking-wide w-2/3 text-gray-800 text-left"
         >
           Discover and save recipes you'll love
         </h2>
