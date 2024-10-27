@@ -57,7 +57,7 @@ const closeModalRecipe = (): void => {
 //   } else {
 //     return;
 //   }
-};
+//};
 </script>
 
 <template>
