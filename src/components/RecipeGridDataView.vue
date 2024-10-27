@@ -51,12 +51,12 @@ const closeModalRecipe = (): void => {
   modalVisible.value = false;
 };
 
-const descriptionCleaned = (description: string) => {
-  if (description) {
-    return description.replace(/&nbsp;/g, " ").replace(/\u2014/g, "—");
-  } else {
-    return;
-  }
+// const descriptionCleaned = (description: string) => {
+//   if (description) {
+//     return description.replace(/&nbsp;/g, " ").replace(/\u2014/g, "—");
+//   } else {
+//     return;
+//   }
 };
 </script>
 
