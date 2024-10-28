@@ -48,13 +48,13 @@ const responsiveOptions = ref([
     numScroll: 1,
   },
   {
-    breakpoint: "1199px",
-    numVisible: 1,
+    breakpoint: "1024px",
+    numVisible: 3,
     numScroll: 1,
   },
   {
-    breakpoint: "767px",
-    numVisible: 1,
+    breakpoint: "800px",
+    numVisible: 2,
     numScroll: 1,
   },
   {
@@ -85,7 +85,7 @@ const responsiveOptions = ref([
         <div
           class="border-surface-200flex flex-col h-full dark:border-surface-700 rounded"
         >
-          <div class="mb-4 md:max-w-72 max-w-56 max-h-56 px-2 mx-auto">
+          <div class="mb-4 max-w-56 max-h-56 px-2 mx-auto">
             <div
               class="relative mx-auto w-56 h-56"
               @click="openModalRecipe(slotProps.data)"
