@@ -27,7 +27,7 @@ onMounted(() => {
   </div>
 
   <HeroImage />
-  <div class="px-6 lg:py-10 lg:px-14 md:flex md:flex-row-reverse">
+  <div class="px-6 md:py-10 lg:px-14 md:flex md:flex-row-reverse">
     <div class="md:w-1/3">
       <h1 class="text-xl lg:text-2xl font-semibold py-3 md:pl-10">My Recipe</h1>
       <div class="mt-2 mb-8">
@@ -35,7 +35,7 @@ onMounted(() => {
       </div>
     </div>
 
-    <div class="md:w-2/3 md:mr-4 lg:mr-8">
+    <div class="md:w-2/3 md:pl-8 md:mr-4 lg:mr-8">
       <h1 class="text-xl lg:text-2xl font-semibold py-3">Recipe Collections</h1>
       <SearchBar />
       <!-- <RecipeListDataView /> -->
