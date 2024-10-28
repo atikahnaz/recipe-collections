@@ -75,7 +75,7 @@ const responsiveOptions = ref([
   <div class="" v-if="props.recipe.length > 0">
     <Carousel
       :value="props.recipe"
-      :numVisible="5"
+      :numVisible="1"
       :numScroll="1"
       :responsiveOptions="responsiveOptions"
       class=""
