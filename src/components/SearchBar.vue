@@ -12,14 +12,17 @@ const handleSearch = (): void => {
 </script>
 
 <template>
-  <div class="flex items-center gap-2 md:py-4 my-2 relative">
+  <div class="flex items-center md:max-w-80 gap-2 md:py-4 mb-2 relative">
     <InputText
       placeholder="Search Ingredients"
       type="text"
       class="w-full"
       v-model="searchText"
     />
-    <i class="pi pi-search mx-2 absolute right-2" @click="handleSearch" />
+    <i
+      class="pi pi-search mx-2 absolute right-2 hover:cursor-pointer"
+      @click="handleSearch"
+    />
     <!-- <InputIcon>
       <i class="pi pi-search mx-2" @click="handleSearch" />
     </InputIcon> -->
