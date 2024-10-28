@@ -141,19 +141,30 @@ const emit = defineEmits(["close"]);
         </div>
       </div>
 
-      <div v-if="props.isSavedRecipe" class="text-center lg:text-start py-4">
-        <DeleteRecipe
-          :recipe="props.recipe"
+      <div class="flex items-center w-full justify-center gap-3 py-4">
+        <div
+          class="bg-slate-200 text-black px-4 py-2 rounded-lg w-1/2 md:text-base text-center hover:bg-white shadow hover:cursor-pointer"
           @click="emit('close')"
-          class="mt-5 py-1 w-full lg:w-1/2"
-        />
-      </div>
-      <div v-else class="text-center">
-        <SaveButton
-          :recipe="props.recipe"
-          @click="emit('close')"
-          class="mt-5 py-1 w-full lg:w-1/2"
-        />
+        >
+          <button>Close</button>
+        </div>
+        <div
+          v-if="props.isSavedRecipe"
+          class="text-center w-1/2 lg:text-start py-4"
+        >
+          <DeleteRecipe
+            :recipe="props.recipe"
+            @click="emit('close')"
+            class="py-1 w-full"
+          />
+        </div>
+        <div v-else class="text-center w-1/2 lg:text-start py-4">
+          <SaveButton
+            :recipe="props.recipe"
+            @click="emit('close')"
+            class="py-1 w-full"
+          />
+        </div>
       </div>
     </div>
   </div>
