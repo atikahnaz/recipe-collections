@@ -72,7 +72,9 @@ const closeModalRecipe = (): void => {
 
     <DataView :value="displayedRecipes" paginator :rows="10" dataKey="id">
       <template #list="slotProps">
-        <div class="flex flex-col lg:grid lg:grid-cols-2 lg:gap-3">
+        <div
+          class="flex flex-col md:grid md:grid-cols-2 md:gap-2 lg:grid lg:grid-cols-2 lg:gap-3"
+        >
           <div
             v-for="(item, index) in slotProps.items"
             :key="index"
