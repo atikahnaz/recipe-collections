@@ -27,7 +27,7 @@ onMounted(() => {
   </div>
 
   <HeroImage />
-  <div class="px-6 md:py-10 lg:px-14 md:flex md:flex-row-reverse">
+  <div class="px-6 pt-4 md:py-10 lg:px-14 md:flex md:flex-row-reverse">
     <div class="md:w-1/3">
       <h1 class="text-xl lg:text-2xl font-semibold py-3 md:pl-10">My Recipe</h1>
       <div class="mt-2 mb-8">
