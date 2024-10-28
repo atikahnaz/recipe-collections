@@ -12,12 +12,9 @@ const store = useRecipeListStore();
       Back
     </button>
     <div
-      class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 h-full gap-2 justify-center"
+      class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 h-full gap-2 justify-center"
     >
-      <div
-        v-for="recipe in store.recipeLocallySaved"
-        class="flex justify-center"
-      >
+      <div v-for="recipe in store.recipeLocallySaved" class="flex">
         <CardSingle :recipe="recipe" />
       </div>
     </div>
