@@ -1,5 +1,4 @@
 <script setup lang="ts">
-//import HelloWorld from "./components/HelloWorld.vue";
 import { useRecipeListStore } from "./stores/recipeStore";
 import "./style.css";
 import { onMounted } from "vue";
@@ -27,15 +26,19 @@ onMounted(() => {
   </div>
 
   <HeroImage />
-  <div class="px-6 pt-4 md:py-10 lg:px-14 md:flex md:flex-row-reverse">
-    <div class="md:w-1/3">
-      <h1 class="text-xl lg:text-2xl font-semibold py-3 md:pl-10">My Recipe</h1>
+  <div class="px-6 pt-4 md:py-10 lg:px-14 lg:flex lg:flex-row-reverse">
+    <div class="lg:w-1/3">
+      <h1
+        class="text-xl lg:text-2xl font-semibold py-3 md:pl-10 lg:text-center lg:pl-0"
+      >
+        My Recipe
+      </h1>
       <div class="mt-2 mb-8">
         <RecipeCard :recipe="store.recipeLocallySaved" />
       </div>
     </div>
 
-    <div class="md:w-2/3 md:pl-8 md:mr-4 lg:mr-8">
+    <div class="lg:w-2/3 md:pl-8 md:mr-4 lg:mr-8">
       <h1 class="text-xl lg:text-2xl font-semibold py-3">Recipe Collections</h1>
       <SearchBar />
       <!-- <RecipeListDataView /> -->
