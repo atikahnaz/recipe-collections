@@ -19,7 +19,7 @@ const isRecipeSaved = computed<boolean>(() =>
 <template>
   <button
     v-if="isRecipeSaved"
-    class="bg-white w-full text-black px-3 py-1 rounded-lg border shadow-sm"
+    class="bg-white w-full text-black px-4 py-2 rounded-lg border shadow-sm md:text-base hover:cursor-default"
   >
     Saved
   </button>
@@ -27,7 +27,7 @@ const isRecipeSaved = computed<boolean>(() =>
   <button
     v-else
     @click="() => store.saveRecipeToLocalStorage(props.recipe)"
-    class="bg-black w-full text-white px-4 py-1 rounded-lg"
+    class="bg-red-600 w-full hover:bg-white hover:text-slate-900 shadow text-white px-4 py-2 rounded-lg md:text-base"
   >
     Save
   </button>
