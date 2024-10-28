@@ -43,8 +43,8 @@ const closeModalRecipe = (): void => {
 
 const responsiveOptions = ref([
   {
-    breakpoint: "1400px",
-    numVisible: 1,
+    breakpoint: "1240px",
+    numVisible: 3,
     numScroll: 1,
   },
   {
