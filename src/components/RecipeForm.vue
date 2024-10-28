@@ -62,19 +62,42 @@ const emit = defineEmits(["close"]);
         <p><span class="">By </span>{{ props.recipe.author.name }}</p>
       </div>
 
-      <div class="py-2">
+      <div class="py-2 xl:hidden">
         {{ descriptionCleaned(props.recipe.description) }}
       </div>
 
-      <div class="flex justify-between py-4 md:py-8">
-        <img
-          :src="currentImage(props.recipe.image)"
-          alt="Image"
-          width="250"
-          preview
-          @error="imageErrorDisplay"
-          class="w-full lg:max-w-96 lg:max-h-auto object-cover"
-        />
+      <div class="flex py-4 md:py-8">
+        <div>
+          <img
+            :src="currentImage(props.recipe.image)"
+            alt="Image"
+            width="250"
+            preview
+            @error="imageErrorDisplay"
+            class="w-full lg:max-w-96 lg:max-h-auto object-cover"
+          />
+        </div>
+        <div class="hidden xl:flex py-2 xl:w-1/2 xl:pl-8">
+          {{ descriptionCleaned(props.recipe.description) }}
+        </div>
+
+        <!-- <div class="hidden xl:flex flex-col xl:w-1/2 xl:ml-8">
+          <h6 class="font-medium">Ingredients</h6>
+          <div
+            v-if="
+              props.recipe.recipeIngredient &&
+              props.recipe.recipeIngredient.length > 0
+            "
+          >
+            <div
+              v-for="(ingredient, index) in props.recipe.recipeIngredient"
+              :key="index"
+            >
+              <li>{{ ingredient }}</li>
+            </div>
+          </div>
+          <div v-else>No ingredients available</div>
+        </div> -->
       </div>
 
       <div class="space-y-3">
