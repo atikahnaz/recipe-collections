@@ -49,7 +49,9 @@ const emit = defineEmits(["close"]);
   <div
     class="bg-white dark:bg-gray-800 text-black dark:text-white z-40 fixed top-0 w-full h-full overflow-y-scroll left-0"
   >
-    <div class="p-5 md:w-1/2 m-auto md:border md:my-4">
+    <div
+      class="p-5 m-auto sm:px-8 md:w-2/3 md:border md:shadow-sm md:rounded-md md:my-4"
+    >
       <div class="flex justify-between">
         <div class="font-semibold text-lg">{{ props.recipe.name }}</div>
         <button @click="emit('close')" class="self-start rounded-full pointer">
@@ -64,14 +66,14 @@ const emit = defineEmits(["close"]);
         {{ descriptionCleaned(props.recipe.description) }}
       </div>
 
-      <div class="flex justify-between py-4">
+      <div class="flex justify-between py-4 md:py-8">
         <img
           :src="currentImage(props.recipe.image)"
           alt="Image"
           width="250"
           preview
           @error="imageErrorDisplay"
-          class="w-full"
+          class="w-full lg:max-w-96 lg:max-h-auto object-cover"
         />
       </div>
 
@@ -115,7 +117,8 @@ const emit = defineEmits(["close"]);
           <div v-else>No instruction availabe</div>
         </div>
       </div>
-      <div v-if="props.isSavedRecipe" class="text-center">
+
+      <div v-if="props.isSavedRecipe" class="text-center lg:text-start py-4">
         <DeleteRecipe
           :recipe="props.recipe"
           @click="emit('close')"
